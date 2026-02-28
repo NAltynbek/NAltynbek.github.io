@@ -15,6 +15,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -22,7 +23,10 @@ body {
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  word-wrap: break-word;
 }
 
 .bg-glow {
@@ -31,8 +35,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 120%;
-  height: 100%;
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, var(--accent-glow), transparent);
+  height: 150%;
+  min-height: 100vh;
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, var(--accent-glow), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -84,6 +89,9 @@ body {
   position: relative;
   z-index: 10;
   padding: 1.25rem 1.5rem;
+  padding-top: max(1.25rem, env(safe-area-inset-top));
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
 }
 
 .logo {
@@ -100,6 +108,7 @@ body {
   max-width: 48rem;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
+  width: 100%;
 }
 
 .hero {
@@ -326,6 +335,7 @@ body {
 .preview-browser {
   width: 100%;
   max-width: 280px;
+  min-width: 0;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
@@ -603,14 +613,45 @@ body {
   }
 }
 
-/* Responsive - Mobile first */
+/* Responsive - Mobile first: градиент скроллится с контентом, не «уезжает» */
+@media (max-width: 768px) {
+  .bg-glow {
+    display: none;
+  }
+
+  body {
+    background: linear-gradient(
+      180deg,
+      rgba(167, 139, 250, 0.35) 0%,
+      rgba(167, 139, 250, 0.1) 25%,
+      transparent 50%
+    ),
+    var(--bg);
+  }
+
+  .bg-orb {
+    opacity: 0.08;
+  }
+}
+
 @media (max-width: 480px) {
   .main {
     padding: 1rem 1rem 3rem;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: max(3rem, env(safe-area-inset-bottom));
   }
 
   .header {
-    padding: 1rem;
+    padding: 1rem 1rem;
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .hero-subtitle {
+    hyphens: auto;
+    overflow-wrap: break-word;
   }
 
   .hero-title {
@@ -660,6 +701,10 @@ body {
 
   .promo-text {
     font-size: 0.95rem;
+  }
+
+  .footer {
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
   }
 }
 
