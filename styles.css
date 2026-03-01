@@ -734,57 +734,80 @@ body {
 }
 
 
-.call-fixed {
+/* ===== КНОПКА ===== */
+
+.call-btn {
     position: fixed;
     bottom: 25px;
     right: 25px;
 
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 
-    background: linear-gradient(135deg,#7b5cff,#a855f7);
-    color: #fff;
+    padding: 14px 22px;
 
-    padding: 14px 20px;
-    border-radius: 60px;
+    background: linear-gradient(
+        135deg,
+        #6d5cff,
+        #9b5cff
+    );
 
-    font-size: 16px;
-    font-weight: 600;
-
+    color: white;
     text-decoration: none;
 
-    box-shadow:
-        0 0 20px rgba(123,92,255,0.6),
-        0 10px 30px rgba(0,0,0,0.4);
+    border-radius: 60px;
 
-    backdrop-filter: blur(12px);
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 10px 30px rgba(124,92,255,.35),
+        inset 0 0 0 1px rgba(255,255,255,.1);
 
     transition: all .3s ease;
+
     z-index: 9999;
-
-    animation: pulse 2.5s infinite;
 }
 
-.call-fixed:hover {
-    transform: translateY(-3px) scale(1.05);
-}
+/* ===== ИКОНКА ===== */
 
 .call-icon {
-    font-size: 20px;
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,0.25);
+    border-radius: 50%;
 }
 
-/* ===== ПУЛЬС ===== */
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(123,92,255,.7); }
-    70% { box-shadow: 0 0 0 18px rgba(123,92,255,0); }
-    100% { box-shadow: 0 0 0 0 rgba(123,92,255,0); }
+.call-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
 }
 
+/* ===== HOVER ===== */
+
+.call-btn:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 15px 40px rgba(124,92,255,.55);
+}
+
+/* ========================= */
+/* 📱 MOBILE ADAPTATION */
+/* ========================= */
 
 @media (max-width: 768px) {
 
-    .call-fixed {
+    .call-btn {
         width: 65px;
         height: 65px;
         padding: 0;
@@ -794,39 +817,28 @@ body {
         justify-content: center;
     }
 
-    .call-text {
+    .call-number {
         display: none;
     }
 
     .call-icon {
-        font-size: 26px;
+        width: 65px;
+        height: 65px;
+        background: transparent;
+    }
+
+    .call-icon svg {
+        width: 26px;
+        height: 26px;
     }
 }
 
+/* маленькие телефоны */
 @media (max-width: 400px) {
-    .call-fixed {
+    .call-btn {
         bottom: 18px;
         right: 18px;
         width: 60px;
         height: 60px;
-    }
-}
-
-@media (min-width: 1400px) {
-    .call-fixed {
-        font-size: 18px;
-        padding: 16px 24px;
-    }
-}
-
-.call-icon {
-    width: 22px;
-    height: 22px;
-    fill: white;
-}
-
-@media (max-width:768px){
-    .call-text{
-        display:none;
     }
 }
