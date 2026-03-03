@@ -11,7 +11,7 @@ export function Hero({ onNavigate }: HeroProps) {
       <div className="absolute inset-0">
         <video
           className="w-full h-full object-cover"
-          src="/elsone.mp4"
+          src={`${import.meta.env.BASE_URL}elsone.mp4`}
           autoPlay
           loop
           muted
