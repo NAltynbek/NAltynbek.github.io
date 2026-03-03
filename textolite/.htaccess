@@ -1,0 +1,14 @@
+DirectoryIndex index.php textolite.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Ensure /textolite loads index.php without needing the filename
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^.*$ index.php [L]
+</IfModule>
+
+# Allow Textolite assets
+<FilesMatch "\.(php|js|css|png|jpg|jpeg|gif|ico)$">
+  Require all granted
+</FilesMatch>
