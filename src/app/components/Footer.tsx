@@ -54,12 +54,24 @@ export function Footer() {
           <div>
             <h4 className="text-lg mb-4">Мы на связи</h4>
             <div className="flex gap-4">
-              <button className="text-gray-400 hover:text-white transition-colors">
+              <a
+                href="https://facebook.com/"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Facebook size={24} />
-              </button>
-              <button className="text-gray-400 hover:text-white transition-colors">
+              </a>
+              <a
+                href="https://instagram.com/"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Instagram size={24} />
-              </button>
+              </a>
               <a
                 href="https://wa.me/996559100097"
                 className="text-gray-400 hover:text-white transition-colors"

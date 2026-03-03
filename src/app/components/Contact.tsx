@@ -16,8 +16,8 @@ export function Contact() {
         >
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
             <div className="space-y-4 max-w-2xl">
-              <p className="text-sm uppercase tracking-[0.25em] text-[#8a7657]">Call us now</p>
-              <h2 className="text-4xl md:text-5xl font-semibold">Talk to our team</h2>
+              <p className="text-sm uppercase tracking-[0.25em] text-[#8a7657]">Свяжитесь с нами</p>
+              <h2 className="text-4xl md:text-5xl font-semibold">Поговорите с нашей командой</h2>
               <p className="text-lg text-[#4a4f55] max-w-2xl">
                 Позвоните — сразу соединяем с нужным специалистом. Без форм и ожиданий.
               </p>
@@ -30,8 +30,8 @@ export function Contact() {
                     <a href="tel:+996559100097" className="block text-lg font-medium text-[#1f2a33]">
                       +(996)559-10-00-97
                     </a>
-                    <a href="+996559100097" className="block text-lg font-medium text-[#1f2a33]">
-                      +(996)559-10-00-97
+                    <a href="tel:+996559100097" className="block text-lg font-medium text-[#1f2a33]">
+                      WhatsApp: +(996)559-10-00-97
                     </a>
                   </div>
                 </div>
